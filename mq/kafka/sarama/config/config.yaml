@@ -1,0 +1,14 @@
+brokers:
+  - "192.168.17.30:9092"
+version: "4.1.0"
+producer:
+  count: 1
+  topic: "test-txn"
+  required_acks: -1
+  max_message_bytes: 1000000
+  timeout: "10s"
+  compression: "snappy"
+  flush_frequency: 500
+consumer:
+  topic:
+  - "test-txn"
